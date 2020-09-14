@@ -1,0 +1,28 @@
+{% extends "layout.twig" %}
+{% block content %}
+<div class="panel widget">
+    <div class="row">
+    	<div class="col-md-6">
+			<div class="panel-title clearfix">Account Details</div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover table-condensed table-sticky-head">
+                    <div class="form-group">
+                        <label> Related Sale</label>
+                        <select class="form-control chosen-select" name="trxSaleList[]"
+                        data-placeholder="Select Some Sale" multiple data-value="">
+                            <option value=""></option>
+                            {% for sale in sales %}
+                            {% if sale.packId == 0 %}
+                            <option value="{{ sale.id }}">{{ sale.id ~ ' - ' ~ sale.productName ~ ' / ' ~ sale.creationDate|date('Y-m-d H:i') }}</option>
+                            {% set continue = true %}
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+{% endblock %}
