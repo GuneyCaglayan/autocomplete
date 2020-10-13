@@ -1,5 +1,5 @@
 DELIMITER $$
-CREATE DEFINER=`akay_devel`@`%` PROCEDURE `ADMIN_SALE_getSalesByAutocompleteQuery`(IN `p_logged_user_id` INT UNSIGNED, IN `p_agency_id` INT UNSIGNED, IN `p_app_key` VARCHAR(255), IN `p_product_type` VARCHAR(255), IN `p_status` VARCHAR(255), IN `p_option` VARCHAR(255), IN `p_query` VARCHAR(255), IN `p_count` INT UNSIGNED)
+CREATE PROCEDURE `ADMIN_SALE_getSalesByAutocompleteQuery`(IN `p_logged_user_id` INT UNSIGNED, IN `p_agency_id` INT UNSIGNED, IN `p_app_key` VARCHAR(255), IN `p_product_type` VARCHAR(255), IN `p_status` VARCHAR(255), IN `p_option` VARCHAR(255), IN `p_query` VARCHAR(255), IN `p_count` INT UNSIGNED)
     NO SQL
 BEGIN
 IF p_count = 0 THEN
